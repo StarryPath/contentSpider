@@ -28,7 +28,7 @@ class contentSpider(scrapy.Spider):
 
         self.cur = self.con.cursor()
 
-        self.cur.execute("select url from biao4 where flag=0 " )
+        self.cur.execute("select url from url_list where flag=0 " )
 
         rows = self.cur.fetchall()
 
