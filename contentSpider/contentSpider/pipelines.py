@@ -39,10 +39,10 @@ class ContentspiderPipeline(object):
 
     def insert_into_table(self, conn, item):
 
-        sql = "insert into biao6(title,head,body,real_url,get_url) values(%s,%s,%s,%s,%s)"
+        sql = "insert into data(title,head,body,real_url,get_url) values(%s,%s,%s,%s,%s)"
         param = ([item['title'], item['head'], item['body'], item['real_url'],item['get_url']])
         conn.execute(sql, param)
-        sql2 = "update biao4 set flag=%s where url=%s"
+        sql2 = "update url_list set flag=%s where url=%s"
         param2 = ("1",item['get_url'])
         conn.execute(sql2, param2)
 #a='UPDATE grabsite set title='+item['title']+',head='+item['head']+',body='+item['body']+' where siteName ='+item['Url']
